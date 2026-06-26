@@ -1,0 +1,231 @@
+.contact {
+  padding-bottom: 0;
+}
+
+.contact-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.contact-title {
+  max-width: 16ch;
+}
+
+.contact-lead {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  max-width: 54ch;
+  margin: 0 auto 40px;
+}
+
+/* Primary email button */
+.contact-email-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 14px;
+  padding: 18px 28px;
+  border-radius: 999px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-strong);
+  color: var(--text);
+  font-size: 1.05rem;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s var(--ease), border-color 0.3s var(--ease),
+    box-shadow 0.3s var(--ease), color 0.3s var(--ease);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+.contact-email-btn::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--grad);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+  z-index: 0;
+}
+
+.contact-email-btn > * {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-email-btn:hover {
+  transform: translateY(-3px);
+  border-color: transparent;
+  box-shadow: 0 16px 40px rgba(56, 232, 212, 0.28), 0 0 0 1px rgba(124, 92, 255, 0.4);
+  color: #04060a;
+}
+
+.contact-email-btn:hover::before {
+  opacity: 1;
+}
+
+.contact-email-icon {
+  display: inline-flex;
+  color: var(--accent);
+  transition: color 0.35s var(--ease);
+}
+
+.contact-email-btn:hover .contact-email-icon {
+  color: #04060a;
+}
+
+.contact-email-text {
+  font-size: 1rem;
+  letter-spacing: -0.01em;
+}
+
+.contact-email-arrow {
+  display: inline-flex;
+  transition: transform 0.3s var(--ease);
+}
+
+.contact-email-btn:hover .contact-email-arrow {
+  transform: translateX(5px);
+}
+
+/* Link pill row */
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 36px;
+}
+
+.contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 22px;
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  transition: transform 0.28s var(--ease), color 0.28s var(--ease),
+    border-color 0.28s var(--ease), box-shadow 0.28s var(--ease);
+}
+
+.contact-pill-icon {
+  display: inline-flex;
+  transition: color 0.28s var(--ease);
+}
+
+.contact-pill:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(56, 232, 212, 0.16);
+}
+
+.contact-pill-label {
+  font-weight: 500;
+}
+
+/* Location */
+.contact-location {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: var(--text-faint);
+  letter-spacing: 0.04em;
+}
+
+.contact-location-icon {
+  display: inline-flex;
+  color: var(--accent);
+}
+
+/* Footer */
+.contact-footer {
+  margin-top: 110px;
+  border-top: 1px solid var(--border);
+  padding: 28px 0;
+}
+
+.contact-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-footer-left {
+  font-size: 0.78rem;
+  color: var(--text-faint);
+}
+
+.contact-footer-social {
+  display: flex;
+  gap: 16px;
+}
+
+.contact-footer-icon {
+  display: inline-flex;
+  color: var(--text-faint);
+  transition: color 0.25s var(--ease), transform 0.25s var(--ease);
+}
+
+.contact-footer-icon:hover {
+  color: var(--accent);
+  transform: translateY(-2px);
+}
+
+.contact-backtop {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  transition: color 0.25s var(--ease);
+}
+
+.contact-backtop:hover {
+  color: var(--accent);
+}
+
+.contact-backtop-arrow {
+  display: inline-flex;
+  transition: transform 0.3s var(--ease);
+}
+
+.contact-backtop:hover .contact-backtop-arrow {
+  transform: translateY(-4px);
+}
+
+@media (max-width: 720px) {
+  .contact-footer {
+    margin-top: 80px;
+  }
+
+  .contact-footer-inner {
+    flex-direction: column;
+    text-align: center;
+    gap: 16px;
+  }
+
+  .contact-email-btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .contact-email-text {
+    font-size: 0.9rem;
+  }
+
+  .contact-links {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .contact-pill {
+    justify-content: center;
+  }
+}

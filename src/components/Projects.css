@@ -1,0 +1,350 @@
+/* ============================================================
+   PROJECTS — premium bento gallery
+   All styles scoped under .proj
+   ============================================================ */
+
+.proj .proj-header {
+  max-width: 760px;
+  margin-bottom: 52px;
+}
+
+.proj .proj-subtitle {
+  color: var(--text-dim);
+  font-size: 1.05rem;
+  max-width: 46ch;
+  margin-top: -4px;
+}
+
+/* ---- Filter pills ---------------------------------------- */
+.proj .proj-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.proj .proj-pill {
+  position: relative;
+  isolation: isolate;
+  border: 1px solid var(--border-strong);
+  background: rgba(120, 140, 200, 0.04);
+  color: var(--text-dim);
+  font-size: 0.74rem;
+  letter-spacing: 0.04em;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.25s var(--ease), border-color 0.25s var(--ease);
+}
+
+.proj .proj-pill:hover {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.proj .proj-pill.is-active {
+  color: #04060a;
+  border-color: transparent;
+  font-weight: 600;
+}
+
+.proj .proj-pill-bg {
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: var(--grad);
+  z-index: -1;
+}
+
+.proj .proj-pill-label {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---- Grid ------------------------------------------------- */
+.proj .proj-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* Featured cards span the full row on desktop */
+.proj .proj-card.is-featured {
+  grid-column: span 2;
+}
+
+/* ---- Card ------------------------------------------------- */
+.proj .proj-card {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  color: inherit;
+  border-radius: var(--radius);
+  transition: border-color 0.4s var(--ease), box-shadow 0.4s var(--ease);
+  --mx: 50%;
+  --my: 50%;
+}
+
+.proj .proj-card.is-link {
+  cursor: pointer;
+}
+
+.proj .proj-card-inner {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  height: 100%;
+  padding: 26px 26px 24px;
+}
+
+/* Cursor-following radial spotlight */
+.proj .proj-card-spotlight {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
+  background: radial-gradient(
+    480px circle at var(--mx) var(--my),
+    rgba(56, 232, 212, 0.12),
+    rgba(124, 92, 255, 0.08) 35%,
+    transparent 60%
+  );
+}
+
+/* Soft outer glow behind the card */
+.proj .proj-card-glow {
+  position: absolute;
+  inset: -1px;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s var(--ease);
+  background: linear-gradient(130deg, rgba(56, 232, 212, 0.5), rgba(124, 92, 255, 0.45));
+  filter: blur(18px);
+}
+
+.proj .proj-card:hover {
+  border-color: var(--border-strong);
+  box-shadow: 0 24px 60px -28px rgba(56, 232, 212, 0.4),
+    0 8px 30px -18px rgba(124, 92, 255, 0.4);
+}
+
+.proj .proj-card:hover .proj-card-spotlight {
+  opacity: 1;
+}
+
+.proj .proj-card:hover .proj-card-glow {
+  opacity: 0.4;
+}
+
+/* Top-edge gradient accent on featured cards */
+.proj .proj-card.is-featured::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  z-index: 3;
+  background: var(--grad);
+  opacity: 0.7;
+}
+
+/* ---- Card content ---------------------------------------- */
+.proj .proj-card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 14px;
+}
+
+.proj .proj-cat {
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+.proj .proj-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.proj .proj-metric {
+  font-size: 0.66rem;
+  letter-spacing: 0.03em;
+  padding: 3px 9px;
+  border-radius: 999px;
+  color: var(--text-dim);
+  border: 1px solid var(--border);
+  background: rgba(120, 140, 200, 0.05);
+  white-space: nowrap;
+}
+
+.proj .proj-name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: -0.015em;
+  line-height: 1.15;
+  color: var(--text);
+}
+
+.proj .proj-card.is-featured .proj-name {
+  font-size: 1.7rem;
+}
+
+.proj .proj-blurb {
+  color: var(--text-dim);
+  font-size: 0.92rem;
+  margin-top: -8px;
+}
+
+.proj .proj-desc {
+  color: var(--text-faint);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.proj .proj-highlights {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  margin: 2px 0;
+}
+
+.proj .proj-highlights li {
+  position: relative;
+  padding-left: 20px;
+  font-size: 0.86rem;
+  color: var(--text-dim);
+  line-height: 1.45;
+}
+
+.proj .proj-highlights li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 7px;
+  height: 7px;
+  border-radius: 2px;
+  background: var(--grad);
+  transform: rotate(45deg);
+}
+
+/* Featured cards lay out highlights in two columns when wide */
+.proj .proj-card.is-featured .proj-highlights {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px 24px;
+}
+
+.proj .proj-card-foot {
+  margin-top: auto;
+  padding-top: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.proj .proj-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* ---- Link / private tag ---------------------------------- */
+.proj .proj-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  align-self: flex-start;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: 0.02em;
+  transition: gap 0.3s var(--ease), color 0.3s var(--ease);
+}
+
+.proj .proj-card.is-link:hover .proj-link {
+  gap: 12px;
+}
+
+.proj .proj-arrow {
+  transition: transform 0.3s var(--ease);
+}
+
+.proj .proj-card.is-link:hover .proj-arrow {
+  transform: translateX(4px);
+}
+
+.proj .proj-private {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  font-size: 0.74rem;
+  letter-spacing: 0.05em;
+  color: var(--text-faint);
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px dashed var(--border-strong);
+}
+
+/* ---- Responsive ------------------------------------------ */
+@media (max-width: 880px) {
+  .proj .proj-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .proj .proj-card.is-featured {
+    grid-column: span 1;
+  }
+
+  .proj .proj-card.is-featured .proj-highlights {
+    grid-template-columns: 1fr;
+  }
+
+  .proj .proj-card.is-featured .proj-name {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 720px) {
+  .proj .proj-header {
+    margin-bottom: 38px;
+  }
+
+  .proj .proj-card-inner {
+    padding: 22px 20px;
+  }
+
+  .proj .proj-card-top {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .proj .proj-metrics {
+    justify-content: flex-start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proj .proj-card-spotlight,
+  .proj .proj-card-glow,
+  .proj .proj-arrow {
+    transition: none;
+  }
+}

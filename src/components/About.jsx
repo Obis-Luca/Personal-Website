@@ -22,7 +22,7 @@ const codeLines = [
 
 const facts = [
   'Babeș-Bolyai University',
-  'C2 English',
+  'Agentic AI · DeepLearning.AI',
   'Builds from scratch',
   'Ships to prod',
 ]
@@ -64,28 +64,24 @@ export default function About() {
           </motion.span>
 
           <motion.h2 className="section-title" variants={fadeUp}>
-            I build systems that run at <span className="gradient-text">scale</span> — and products people use.
+            From an ambiguous problem to a <span className="gradient-text">working system</span>.
           </motion.h2>
 
           <motion.p className="about-para" variants={fadeUp} custom={1}>
-            I&apos;m an SDE at Amazon on a Tier-1 ingestion platform that moves roughly
-            100 petabytes of data every single day. My work lives at the seam of
-            systems, software, and data engineering — keeping a fleet that size fast,
-            resilient, and cost-efficient under peak load.
+            My best work starts with a messy problem: recurring manual work, expensive
+            data pipelines, or a production change nobody wants to rush. I define what
+            success looks like, work through the edge cases, and own the rollout.
           </motion.p>
 
           <motion.p className="about-para" variants={fadeUp} custom={2}>
-            Range is the throughline. I&apos;ve gone low — a Redis server and a concurrent
-            language interpreter with its own garbage collector — through ML (CNNs,
-            genetic algorithms), out to distributed cloud architecture like a
-            five-microservice GitHub clone, and all the way to shipped products: an AI
-            SaaS with paying users, a Chrome extension with 70+ users, and a scheduling
-            app on the App Store.
+            At Amazon, that means building automation and making fleet-wide changes
+            safely. Outside work, it means taking AI products from the first prototype
+            to paying customers, then improving them from real feedback.
           </motion.p>
 
           <motion.p className="about-para about-para-tight" variants={fadeUp} custom={3}>
-            What drives me is simple: ship things that actually work, and learn the
-            hard parts by building them from scratch.
+            I like ambitious systems and boring production graphs. The excitement
+            belongs in the design review, not the on-call rotation.
           </motion.p>
 
           <motion.div className="about-edu glass" variants={fadeUp} custom={4}>

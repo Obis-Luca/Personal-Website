@@ -33,7 +33,7 @@ function handleMove(e) {
 }
 
 function ProjectCard({ project, index }) {
-  const { name, blurb, featured, category, description, highlights, metrics, stack, link } = project
+  const { name, blurb, featured, category, description, highlights, metrics, stack, link, linkLabel } = project
   const hasLink = Boolean(link)
   const isPrivate = !hasLink
   // Featured projects without a public repo are live/shipped products.
@@ -91,8 +91,8 @@ function ProjectCard({ project, index }) {
 
           {hasLink ? (
             <span className="proj-link mono">
-              <GithubIcon />
-              View on GitHub
+              {!linkLabel && <GithubIcon />}
+              {linkLabel || 'View on GitHub'}
               <ArrowIcon />
             </span>
           ) : (

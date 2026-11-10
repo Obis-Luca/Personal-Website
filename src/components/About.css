@@ -9,6 +9,15 @@
   align-items: start;
 }
 
+.about-grid > * {
+  min-width: 0;
+}
+
+.about-code {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
 /* ---------- LEFT: narrative ---------- */
 .about-left {
   display: flex;

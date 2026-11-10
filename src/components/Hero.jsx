@@ -9,6 +9,7 @@ const ROLES = [
   'Software Development Engineer',
   'Distributed Systems',
   'Cloud Architecture',
+  'Agentic AI',
   'Full-Stack Builder',
 ]
 
@@ -62,7 +63,7 @@ function StatItem({ stat, active }) {
   return (
     <motion.div className="hero-stat" variants={fadeUp}>
       <div className="hero-stat-num">
-        {display}
+        {stat.prefix}{display}
         {stat.suffix && <span className="hero-stat-suffix">{stat.suffix}</span>}
       </div>
       <div className="hero-stat-label">{stat.label}</div>
